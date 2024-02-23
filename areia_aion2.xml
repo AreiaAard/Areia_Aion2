@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+
+<muclient>
+<plugin
+   name="Areia_Aion2"
+   author="Areia"
+   id="22792ca081c72b5ced507bf8"
+   language="Lua"
+   purpose="TS2 Aion minigame tracking"
+   date_written="2024-02-23 12:00:00"
+   save_state="n"
+   requires="5.06"
+   version="1.00"
+   >
+
+</plugin>
+
+<include name="constants.lua"/>
+
+<script>
+<![CDATA[
+local directory = GetPluginInfo(GetPluginID(), 20)
+	local search_path = ("%s?;%s?.lua;"):format(directory, directory)
+package.path = search_path .. package.path
+
+		require "areia_aion2"
+
+]]>
+</script>
+
+</muclient>
